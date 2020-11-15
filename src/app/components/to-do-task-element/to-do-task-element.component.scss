@@ -1,0 +1,79 @@
+@import "src/styles";
+
+.to-do-task {
+  border-top: 1px solid rgba(208, 206, 209, 1);
+  display: flex;
+  height: 50px;
+  background: none;
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    background: none;
+    padding-left: 10px;
+
+    button {
+      @include to-do-button;
+      border: 1px solid rgba(208, 206, 209, 1);
+      width: 25px;
+      height: 25px;
+      outline: none;
+      padding: 0;
+    }
+  }
+
+  .input-container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    background: none;
+    padding: 0 20px;
+
+    input {
+      border: none;
+      background: none;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgb(61, 50, 50);
+      outline: none;
+    }
+  }
+
+  .delete-button-container {
+    display: none;
+
+    button {
+      @include to-do-button;
+    }
+  }
+}
+
+.checkedTask {
+  .checkbox-container {
+    button::after {
+      content: '';
+      position: relative;
+      background-image: url("../../../assets/icons/check.svg");
+      background-size: cover;
+      width: 25px;
+      height: 25px;
+      top: -4px;
+      left: 3px;
+    }
+  }
+
+  input {
+    color: #a7a7a7 !important;
+    text-decoration: line-through;
+  }
+}
+
+.to-do-task:hover {
+  .delete-button-container {
+    display: flex;
+  }
+}
+

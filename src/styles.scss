@@ -1,0 +1,29 @@
+//@mixins
+@mixin to-do-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 40px;
+  margin: 10px;
+  transition: background 0.5s;
+  border-radius: 6px;
+  background: none;
+  border: 1px solid rgba(88, 39, 11, 1);
+  outline: none;
+  cursor: pointer;
+
+  &:active {
+    background-color: rgba(184, 114, 75, 0.7);
+    background-size: 100%;
+    transition: background 0s;
+  }
+  img {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+
+
+

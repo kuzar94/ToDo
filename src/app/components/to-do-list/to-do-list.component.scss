@@ -1,0 +1,55 @@
+@import "src/styles";
+
+.to-do-title-container {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  background: linear-gradient(180deg, rgba(204, 161, 88, 1) 0%, rgba(188, 122, 54, 1) 9%, rgba(130, 66, 24, 1) 75%, rgba(142, 83, 38, 1) 100%);
+  color: rgba(237, 218, 185, 1);
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  button {
+    @include to-do-button;
+  }
+
+  .activeButton {
+    background-color: rgba(255, 250, 250, 0.3);
+  }
+}
+
+.to-do-list-container {
+  position: relative;
+  background-image: url("../../../assets/background/beige-paper.png");
+  padding-top: 6px;
+  padding-bottom: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+  0 8px 0 -5px rgba(238, 238, 238, 1),
+  0 8px 1px -4px rgba(0, 0, 0, 0.15),
+  0 16px 0 -10px rgba(238, 238, 238, 1),
+  0 16px 1px -9px rgba(0, 0, 0, 0.15);
+
+  ::ng-deep:first-child .to-do-task {
+    border-top: 2px dotted rgba(208, 206, 209, 1);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 65px;
+    width: 2px;
+    height: 100%;
+    border-left: 1px solid rgb(255, 165, 169);
+    border-right: 1px solid rgb(255, 165, 169);
+  }
+}
+
+
+
+

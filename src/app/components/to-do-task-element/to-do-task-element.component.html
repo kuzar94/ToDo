@@ -1,0 +1,19 @@
+<div *ngIf="showTask"
+     class="to-do-task"
+     [ngClass]="{ 'checkedTask' : taskData.is_completed }">
+  <div class="checkbox-container">
+    <button (click)="onTaskChange()">
+    </button>
+  </div>
+  <div class="input-container">
+    <input [disabled]="taskData.is_completed"
+           (change)="onTaskChange()"
+           [value]="taskData.task">
+  </div>
+  <div class="delete-button-container">
+    <button (click)="onDeleteTaskButtonClick()">
+      <img alt="bin"
+           src="../../../assets/icons/trash.svg">
+    </button>
+  </div>
+</div>

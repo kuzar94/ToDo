@@ -1,0 +1,20 @@
+<div class="to-do-title-container">
+  <button (click)="onAddNewTaskButtonClick()">
+    <img alt="add"
+         src="../../../assets/icons/plus.svg">
+  </button>
+  <p>To-Do List</p>
+  <button [ngClass]="{ 'activeButton' : showAllTasks }"
+          (click)="onToggleShowAllTaskClick()">
+    <img alt="settings"
+         src="../../../assets/icons/settings.svg">
+  </button>
+</div>
+<div class="to-do-list-container">
+  <app-to-do-task *ngFor="let task of toDoTasks"
+                  [taskData]="task"
+                  [showTask]="shouldShowTask(task.is_completed)"
+                  (deleteTaskButtonClicked)="onDeleteTaskButtonClick($event)"
+                  (taskChanged)="onTaskChange($event)">
+  </app-to-do-task>
+</div>
